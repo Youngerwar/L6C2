@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Lesson 6 </title>
+    <style>
+        body {
+            background-image: url("bg.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+        }
+
+        p {
+            font-weight: bolder;
+        }
+
+        table {
+            border-collapse: collapse;
+            /* width: 100%; */
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e5e5e5;
+        }
+
+        button {
+            width: 150px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            appearance: none;
+            background: url("down_arrow.png") no-repeat right center;
+            background-size: 20px;
+        }
+
+        button:hover {
+            border-color: #999;
+        }
+
+        button:focus {
+            outline: none;
+            border-color: red;
+            box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
+        }
+    </style>
+    <script>
+        function VideoPlay() {
+            document.getElementById("COW").play();
+
+        }
+        function VideoPause() {
+            document.getElementById("COW").pause();
+
+        }
+        function VideoStop() {
+            document.getElementById("COW").pause();
+            document.getElementById("COW").currentTime = 0;
+            document.getElementById("COW").play();
+
+        }
+
+        function AudioPlay() {
+            document.getElementById("audio").play();
+
+        }
+        function AudioPause() {
+            document.getElementById("audio").pause();
+
+        }
+        function AudioStop() {
+            document.getElementById("audio").pause();
+            document.getElementById("audio").currentTime = 0;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>The usage of "Button, Video, and Audio"</h1>
+        <p>
+            Play, Pause and stop
+        </p>
+        <video src="COW.mp4" id="COW" width="70%" preload="auto" controls></video>
+        <br>
+        <button onclick="VideoPlay()">Play </button>
+        <button onclick="VideoPause()">Pause </button>
+        <button onclick="VideoStop()">Restart</button>
+        <br><br>
+        <p>
+            Song-Play, Pause and stop
+        </p>
+
+        <img src="music.jpg" width="320" /><br>
+        <audio src="londonbridge.mp3" controls></audio>
+        <br>
+        <audio src="londonbridge.mp3" id="audio"></audio>
+        <br>
+        <button onclick="AudioPlay()">Play </button>
+        <button onclick="AudioPause()">Pause </button>
+        <button onclick="AudioStop()">Restart</button>
+        
+    </center>
+</body>
+
+
+</html>
